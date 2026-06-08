@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: fact_service_requests
+    columns:
+      - name: servicerequestid
+        tests:
+          - not_null
+          - unique
+      - name: ward
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Ward 1', 'Ward 2', 'Ward 3', 'Ward 4', 'Ward 5', 'Ward 6', 'Ward 7', 'Ward 8', 'Unknown Ward']

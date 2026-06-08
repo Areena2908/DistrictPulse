@@ -1,0 +1,7 @@
+dc_311:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '../dc_311.duckdb'
+      threads: 4
