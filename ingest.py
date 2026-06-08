@@ -73,6 +73,6 @@ if __name__ == "__main__":
     for year, layer_id in layers.items():
         # Using a limit for the environment safety initially, but in reality we'd pull all.
         # Actually the spec asks for >1M rows total. Let's pull up to 300,000 per year.
-        ingest_layer(year, layer_id, max_records=300000)
+        ingest_layer(year, layer_id, max_records=10000)
     
     print("Ingestion complete.")
