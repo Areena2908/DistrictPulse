@@ -35,7 +35,7 @@ To make service delivery fairer across the city, operational resources (like san
 
 ## 🏗 How It Works (Under the Hood)
 
-This isn't just a simple spreadsheet. This platform automatically downloads raw data directly from the **DC Government's live database** and cleans it up so it can be easily understood by visual tools like Power BI.
+This isn't just a simple spreadsheet. This platform automatically downloads raw data directly from the **DC Government's live database** and cleans it up so it can be easily analyzed in Tableau.
 
 ```mermaid
 graph TD;
@@ -43,7 +43,7 @@ graph TD;
     RAW -->|Organizes| BRONZE[Step 1: Unfiltered Data];
     BRONZE -->|Cleans & Removes Duplicates| SILVER[Step 2: Cleaned Data];
     SILVER -->|Calculates Wait Times| GOLD[Step 3: Final Metrics];
-    GOLD -->|Connects To| PBI[Visual Dashboard / Power BI];
+    GOLD -->|Connects To| TABLEAU[Tableau Dashboard];
     
     classDef api fill:#e1f5fe,stroke:#0288d1;
     classDef bronze fill:#cd7f32,stroke:#8b5a2b;
@@ -84,11 +84,17 @@ dbt run --profiles-dir .
 dbt test --profiles-dir .
 ```
 
-### 4. Connect to Power BI
-1. Open Power BI Desktop.
-2. Make sure you have the **DuckDB ODBC driver** installed.
-3. Connect to the `DistrictPulse/dc_311.duckdb` file.
-4. Drag-and-drop the `mart_response_by_ward_servicetype` data to build your own maps and charts!
+### 4. Export Dashboard CSV Files
+Export the final dbt models into CSV files for Tableau.
+
+```bash
+cd ..
+python query_findings.py
+
+### 5. Connect to Tableau
+1. Open Tableau Public.
+2. Connect to the exported CSV files.
+3. Use mart_response_by_ward_servicetype.csv and mart_sla_by_ward.csv to build the dashboard.
 
 ---
 
