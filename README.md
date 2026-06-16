@@ -7,6 +7,9 @@
 **One-line pitch:** A data project that pulls live 311 service requests from the DC government to uncover whether some neighborhoods have to wait longer than others for basic city services.
 
 ---
+## Dashboard
+
+[View Tableau Dashboard](https://public.tableau.com/app/profile/areena.syed/viz/DistrictPulseDC311ServiceAnalyticsDashboard/DistrictPulseDashboard)
 
 ## 📊 Executive Summary
 
