@@ -90,6 +90,8 @@ Export the final dbt models into CSV files for Tableau.
 ```bash
 cd ..
 python query_findings.py
+```
+
 
 ### 5. Connect to Tableau
 1. Open Tableau Public.
